@@ -1,0 +1,412 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* fonts & root vars (add to top of globals.css) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+:root {
+  --bg-900: #0b0f14;
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2dcb;
+  --neon-orange: #ff8a00;
+  --muted: #9aa6b2;
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* set fonts */
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+h1, .neon-heading {
+  font-family: 'Orbitron', 'Audiowide', 'Helvetica', sans-serif;
+}
+
+/* utility for scanlines if not added inline */
+.bg-scanlines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(0,0,0,0) 1px,
+    rgba(0,0,0,0) 3px
+  );
+}
+
+/* small global tweak so box-shadows feel neon-ish on dark bg */
+* { box-sizing: border-box; }
+
+/* globals.css
+   Centralized neon/gamer theme and shared UI utilities for your portfolio
+   - Drop-in for the inline styles we used across components
+   - Keep this single source of truth for theme tokens and component-level helpers
+*/
+
+/* ----------------------
+   Theme tokens (single source)
+   ---------------------- */
+:root{
+  --bg-900: #071021;
+  --bg-950: #0b1117;
+
+  --neon-cyan: #00f0ff;
+  --neon-pink: #ff2dcb;
+  --neon-accent: #7cffb2;
+  --neon-orange: #ff8a00;
+
+  --glass-weak: rgba(255,255,255,0.02);
+  --glass-strong: rgba(255,255,255,0.04);
+  --muted-text: #cbd5e1;
+  --soft-shadow: rgba(2,6,23,0.6);
+}
+
+/* ----------------------
+   Page background helpers
+   ---------------------- */
+html, body, #root { height: 100%; }
+body {
+  background: linear-gradient(180deg, var(--bg-900), var(--bg-950));
+  color: #e6eef5;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* scanlines texture used on many sections */
+.bg-scanlines {
+  background-image: repeating-linear-gradient(
+    180deg,
+    rgba(255,255,255,0.01) 0px,
+    rgba(0,0,0,0) 1px,
+    rgba(0,0,0,0) 4px
+  );
+}
+
+/* subtle radial vignette */
+.bg-vignette {
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.6), transparent 40%);
+}
+
+/* ----------------------
+   Typography accents
+   ---------------------- */
+.neon-heading {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.neon-underline {
+  height: 6px;
+  width: 112px;
+  display: block;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--neon-orange), var(--neon-pink));
+  box-shadow: 0 10px 40px rgba(255,138,0,0.08), 0 0 28px rgba(255,45,203,0.06);
+}
+
+/* ----------------------
+   Glass cards / panels
+   ---------------------- */
+.glass-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--glass-strong);
+  border-radius: 12px;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px var(--soft-shadow), inset 0 1px 0 rgba(255,255,255,0.02);
+  color: #e6eef5;
+}
+
+/* stronger rounded panel */
+.glass-card-lg {
+  border-radius: 14px;
+  padding: 1.25rem;
+}
+
+/* soft top accent (used on some cards) */
+.card-top-accent {
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: rgba(255,138,0,0.12);
+}
+
+/* ----------------------
+   Buttons / controls
+   ---------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem .8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: #e6eef5;
+  transition: transform .18s, box-shadow .18s, color .18s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,240,255,0.04); }
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  color: #001018;
+  border: 0;
+  box-shadow: 0 10px 30px rgba(0,240,255,0.08), inset 0 -6px 18px rgba(0,0,0,0.12);
+}
+.btn-accent {
+  background: linear-gradient(90deg, rgba(255,138,0,0.12), rgba(255,45,203,0.05));
+  color: #fff;
+  font-weight: 700;
+}
+
+/* small icon button */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* floating small action */
+.action-btn {
+  background: transparent;
+  color: var(--muted-text);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* live link / demo button */
+.live-btn {
+  background: linear-gradient(90deg, rgba(255,138,0,0.12), rgba(255,45,203,0.05));
+  color: #fff;
+  padding: .35rem .75rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* video button */
+.video-btn {
+  background: linear-gradient(90deg, rgba(255,50,50,0.12), rgba(255,45,203,0.05));
+  color: #fff;
+  padding: .35rem .75rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* preview button used in certificates/projects */
+.preview-btn {
+  display:inline-flex;
+  gap:.5rem;
+  align-items:center;
+  background: linear-gradient(90deg, rgba(0,240,255,0.06), rgba(255,45,203,0.03));
+  color: #e8fbff;
+  padding: .35rem .75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid rgba(0,240,255,0.08);
+}
+
+/* ----------------------
+   Cards / Projects / Skills
+   ---------------------- */
+.project-card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+.card-inner {
+  border-radius: 12px;
+  transition: transform 300ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.card-inner:hover { box-shadow: 0 20px 50px rgba(2,6,23,0.75), 0 6px 30px rgba(0,240,255,0.02); }
+
+/* tilt helper (JS-controlled) */
+[data-tilt="true"] { transform-style: preserve-3d; }
+
+/* skill chip */
+.skill-chip, .tech-badge {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: #e6eef5;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.skill-chip:hover, .tech-badge:hover {
+  transform: translateY(-4px);
+  color: var(--neon-orange);
+  border-color: rgba(255,138,0,0.22);
+  box-shadow: 0 8px 20px rgba(255,138,0,0.04), 0 0 18px rgba(255,45,203,0.02);
+}
+
+/* expand panel animation */
+.expand-panel {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height .35s ease, opacity .35s ease;
+}
+.expand-panel.expanded {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* ----------------------
+   Modal / dialog
+   ---------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 1rem;
+}
+
+/* modal content helpers */
+.modal .close {
+  position: absolute;
+  right: .75rem;
+  top: .6rem;
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+}
+
+/* ----------------------
+   Header / nav shared styles
+   ---------------------- */
+.header-transparent {
+  background: linear-gradient(180deg, rgba(2,6,23,0.0), rgba(2,6,23,0.02));
+}
+.header-glass {
+  background: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(6,10,20,0.9));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* logo */
+.logo-box {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0,240,255,0.04);
+}
+.logo-text {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* nav underline */
+.nav-underline {
+  display: block;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -8px;
+  height: 4px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: scaleX(0.8);
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink));
+  transition: opacity 220ms, transform 220ms;
+  box-shadow: 0 8px 30px rgba(0,240,255,0.06);
+}
+
+/* mobile drawer */
+.mobile-drawer.drawer-closed { opacity: 0; transform: translateY(-6px) scale(0.99); pointer-events: none; }
+.mobile-drawer.drawer-open { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+/* backdrop card for mobile menu */
+.backdrop-blur-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: .75rem;
+}
+
+/* ----------------------
+   Forms / Floating labels
+   ---------------------- */
+.floating-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 1rem 0.75rem 0.5rem;
+  border-radius: 10px;
+  color: #e6eef5;
+}
+.floating-input::placeholder { color: transparent; }
+.floating-label {
+  position: absolute;
+  left: .9rem;
+  top: .9rem;
+  font-size: .85rem;
+  color: #9fb3c6;
+  pointer-events: none;
+  transition: transform .18s ease, color .18s ease, font-size .18s;
+}
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
+  transform: translateY(-1.25rem) scale(.95);
+  color: var(--neon-cyan);
+}
+.floating-input.invalid { border-color: rgba(255,80,80,0.7); }
+.error-text { color: #ffb4b4; font-size: .82rem; display:block; margin-top:.35rem; }
+
+/* ----------------------
+   Toast
+   ---------------------- */
+.toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.5rem;
+  z-index: 80;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #e6eef5;
+  padding: .6rem .9rem;
+  border-radius: 10px;
+  box-shadow: 0 12px 36px rgba(2,6,23,0.7);
+}
+
+/* ----------------------
+   Accessibility / motion
+   ---------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ----------------------
+   Small utility classes
+   ---------------------- */
+.text-muted { color: var(--muted-text); }
+.center { text-align: center; }
