@@ -125,7 +125,7 @@ const About = () => {
                     <a href="https://www.linkedin.com/in/aryanmokashi49/" target="_blank" rel="noreferrer" className="flex-1 p-2 bg-slate-800 rounded-lg flex justify-center items-center text-slate-400 hover:bg-blue-600/20 hover:text-blue-400 transition-colors">
                         <Linkedin size={18} />
                     </a>
-                    <a href="https://www.instagram.com/_aryanmokashi" target="_blank" rel="noreferrer" className="flex-1 p-2 bg-slate-800 rounded-lg flex justify-center items-center text-slate-400 hover:bg-pink-600/20 hover:text-pink-400 transition-colors">
+                    <a href="https://www.instagram.com/_aryanmokashi_" target="_blank" rel="noreferrer" className="flex-1 p-2 bg-slate-800 rounded-lg flex justify-center items-center text-slate-400 hover:bg-pink-600/20 hover:text-pink-400 transition-colors">
                         <Instagram size={18} />
                     </a>
                  </div>
