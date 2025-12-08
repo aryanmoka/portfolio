@@ -124,7 +124,7 @@ const Hero = () => {
                     <a href="https://www.linkedin.com/in/aryanmokashi49/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn">
                         <Linkedin size={20} />
                     </a>
-                    <a href="https://www.instagram.com/_aryanmokashi" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-pink-500 transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/_aryanmokashi_" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-pink-500 transition-colors" aria-label="Instagram">
                         <Instagram size={20} />
                     </a>
                 </div>

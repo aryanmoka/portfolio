@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     { icon: <Github size={18} />, href: 'https://github.com/aryanmoka', label: 'GitHub' },
     { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/aryanmokashi49/', label: 'LinkedIn' },
-    { icon: <Instagram size={18} />, href: 'https://www.instagram.com/_aryanmokashi', label: 'Instagram' },
+    { icon: <Instagram size={18} />, href: 'https://www.instagram.com/_aryanmokashi_', label: 'Instagram' },
     { icon: <Mail size={18} />, href: 'mailto:aryanmokashi28@gmail.com', label: 'Email' },
   ];
 
