@@ -148,11 +148,11 @@ const Hero = () => {
                         className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
                     />
                     
-                    {/* Overlay Info on Image */}
+                    {/* Overlay Info on Image
                     <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform">
                         <p className="text-cyan-400 font-mono text-xs mb-1">CURRENTLY WORKING ON</p>
                         <p className="text-white font-bold">Bi-directional Lifestyle Analysis</p>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Floating decorative elements */}
