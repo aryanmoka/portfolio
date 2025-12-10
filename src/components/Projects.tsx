@@ -185,14 +185,18 @@ const Projects: React.FC = () => {
       highlights: ['Led team ChakraVyuh', 'Multi-factor authentication', 'Geo-fencing logic'],
     },
     {
-      title: 'Workout Intensity Prediction',
-      role: 'Research Project',
-      year: 'Ongoing',
-      image: '/projects/musclematrix.jpg',
-      description: 'ML/DL analysis on multi-sensor wearable datasets to classify activity and predict workout intensity with high accuracy.',
-      technologies: ['Python', 'TensorFlow', 'XGBoost', 'CNN/LSTM', 'Pandas'],
+      title: 'Multi-Sensor Activity & Intensity Prediction',
+      role: 'MSc Research Thesis',
+      year: '2025',
+      image: '/projects/musclematrix.jpg', // Keep your existing image path
+      description: 'Developed a Hybrid Deep Learning system (CNN-LSTM) for Human Activity Recognition (HAR) using UCI wearable sensor data. Engineered a pipeline that processes raw accelerometer/gyroscope signals to classify 6 physical activities and estimate workout intensity zones.',
+      technologies: ['Python', 'TensorFlow (Keras)', 'Scikit-Learn', 'Hybrid CNN-LSTM', 'SciPy (Signal Processing)'],
       demoType: 'other',
-      highlights: ['Sensor data feature engineering', 'Time-series modelling', 'Analytical dashboards'],
+      highlights: [
+        'Achieved 91.11% accuracy with Hybrid CNN-LSTM, outperforming Random Forest baseline (84.46%) by ~7%.',
+        'Implemented advanced signal preprocessing: Butterworth low-pass filtering and sliding-window segmentation.',
+        'Designed a dual-output logic to correlate signal magnitude (SMA) with metabolic intensity levels.'
+      ],
     },
     {
       title: 'Chef Byte - AI Cooking',
