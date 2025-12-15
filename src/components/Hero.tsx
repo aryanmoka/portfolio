@@ -104,8 +104,8 @@ const Hero = () => {
 
               {/* Creative Download Resume Button */}
               <a 
-                href="/Aryan Mokashi cv.pdf" 
-                download="Aryan_Mokashi_Resume.pdf"
+                href="resume/Aryan Mahendra Mokashi cv.pdf" 
+                download="Aryan Mahendra Mokashi cv.pdf"
                 className="group relative px-6 py-3 bg-slate-900 border border-slate-700 text-slate-300 font-medium rounded-lg overflow-hidden flex items-center gap-2 hover:border-cyan-500/50 hover:text-cyan-400 transition-all"
               >
                 <div className="absolute inset-0 bg-cyan-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
