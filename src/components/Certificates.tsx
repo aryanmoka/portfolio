@@ -73,6 +73,14 @@ const Certificates: React.FC = () => {
       image: '/certificates/react-nextjs.png',
       date: '2026'
     },
+    {
+      id: 'CERT-003',
+      title: 'Basic to Advance Tableau',
+      issuer: 'Skill Nation',
+      link: 'https://excel.jatanshah.in/your-certificate/2D1691609115-2D16916091DC-2D089EE0DD63/',
+      image: '/certificates/Tableau.jpg',
+      date: '2026'
+    }
   ];
 
   // --- State ---

@@ -376,11 +376,12 @@ export const projects: Project[] = [
       techStack: ['Power BI', 'DAX', 'Excel', 'Data Visualization'],
     },
   },
-  {
+  {    
     slug: 'd-waffle-story',
     title: 'D Waffle Story',
     role: 'Freelance Full Stack Developer',
     year: '2026',
+    image: '/projects/waffle.jpg',
     description:
       'QR-based digital menu platform for a local food business, replacing static printed menus with an admin panel for real-time dish, pricing, and availability updates.',
     technologies: ['React.js', 'FastAPI', 'MongoDB Atlas', 'Cloudinary', 'JWT'],
